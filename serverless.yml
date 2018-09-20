@@ -1,4 +1,6 @@
 service: WhatTheyTweeted
+plugins:
+  - serverless-dotenv-plugin
 
 provider:
   name: aws
@@ -20,9 +22,9 @@ provider:
             - "/*"
 
   environment:
-    SCREEN_NAME_TO_COPY: ""
-    YEARS_AGO_TO_COPY: 4
-    DAYS_TO_SCHEDULE: 1
+    SCREEN_NAME_TO_COPY: ${env:SCREEN_NAME_TO_COPY}
+    YEARS_AGO_TO_COPY: ${env:YEARS_AGO_TO_COPY}
+    DAYS_TO_SCHEDULE: ${env:DAYS_TO_SCHEDULE}
 
 functions:
   scheduleTweets:

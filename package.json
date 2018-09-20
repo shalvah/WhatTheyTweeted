@@ -6,7 +6,9 @@
   "dependencies": {
     "twit": "^2.2.11"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "serverless-dotenv-plugin": "^1.2.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
