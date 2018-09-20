@@ -1,0 +1,23 @@
+{
+  "name": "whattheytweeted",
+  "version": "1.0.0",
+  "description": "Twitter bot that echoes tweets a specified handle made in the past",
+  "main": "handler.js",
+  "dependencies": {
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shalvah/WhatTheyTweeted.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shalvah/WhatTheyTweeted/issues"
+  },
+  "homepage": "https://github.com/shalvah/WhatTheyTweeted#readme"
+}
