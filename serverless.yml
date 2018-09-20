@@ -22,7 +22,7 @@ provider:
   environment:
     SCREEN_NAME_TO_COPY: ""
     YEARS_AGO_TO_COPY: 4
-    HOURS_TO_SCHEDULE: 24
+    DAYS_TO_SCHEDULE: 1
 
 functions:
   scheduleTweets:
