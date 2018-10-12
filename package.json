@@ -7,11 +7,10 @@
     "twit": "^2.2.11"
   },
   "devDependencies": {
+    "dotenv": "^6.0.0",
     "serverless-dotenv-plugin": "^1.2.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shalvah/WhatTheyTweeted.git"
