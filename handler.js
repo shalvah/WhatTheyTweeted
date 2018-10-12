@@ -1,14 +1,22 @@
 'use strict';
 
-module.exports.hello = async (event, context) => {
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
-    }),
-  };
+const twitter = require('./src/twitter');
+const scheduler = require('./src/scheduler');
+const env = process.env;
 
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
+module.exports.scheduleTweets = async (event, context) => {
+    if (env.SCREEN_NAME_TO_COPY === '') {
+        return {message: 'ERROR: No screen name set.', event};
+    }
+
+    return twitter.fetchTweets(env.SCREEN_NAME_TO_COPY, parseInt(env.MONTHS_AGO_TO_COPY), parseInt(env.DAYS_TO_SCHEDULE))
+        .then(scheduler.scheduleTweets)
+        .then(tweets => ({message: `Scheduled ${tweets.length} tweets`, event}))
+        .catch(e => ({message: e.toString(), event}));
+};
+
+
+module.exports.sendReplicaTweet = async (event, context) => {
+    return twitter.sendTweet(event)
+        .then({ message: 'Sent tweet successfully', event });
 };
